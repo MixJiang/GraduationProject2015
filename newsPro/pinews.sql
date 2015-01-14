@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50541
 File Encoding         : 65001
 
-Date: 2015-01-14 10:56:30
+Date: 2015-01-14 14:35:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -94,7 +94,7 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'admin', '123456', 'm', '13026310448', '0', 'http://tp2.sinaimg.cn/2625394005/50/40062973916/1');
-INSERT INTO `user` VALUES ('2', 'test2', '2222', null, '130263103', '10', 'http://7u2j45.com1.z0.glb.clouddn.com/o_19bhl8rdm3qk1km61vto1cbq1p65c.jpg-head100');
+INSERT INTO `user` VALUES ('2', 'test2', '2222', 'm', '8888888', '10', 'http://7u2j45.com1.z0.glb.clouddn.com/o_19bhl8rdm3qk1km61vto1cbq1p65c.jpg-head100');
 INSERT INTO `user` VALUES ('3', '1833559609@qq.com', '123456', null, null, '10', 'http://tp2.sinaimg.cn/2625394005/50/40062973916/1');
 INSERT INTO `user` VALUES ('4', 'test3', '111111', null, null, '10', 'http://tp2.sinaimg.cn/2625394005/50/40062973916/1');
 INSERT INTO `user` VALUES ('5', 'test4', '2222', null, null, '10', 'http://tp2.sinaimg.cn/2625394005/50/40062973916/1');
