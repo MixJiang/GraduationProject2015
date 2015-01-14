@@ -1,0 +1,149 @@
+/* hiddden box */
+.hiddenBox > div{display:none;}
+.hiddenBoxMask{
+	background:rgba(0,0,0,0.5);
+	position:fixed;
+	width:100%;height:100%;
+}
+#loginBox,#registerBox{
+	width:200px;height:400px;
+	background:#fff;
+	position:fixed;
+	margin-left:-100px;margin-top:-200px;left:50%;top:50%;
+}
+
+
+
+#header{
+  min-width:700px;
+  width: 100%;
+  height:40px;
+  overflow:hidden;
+  background-color: #1980CC;
+  margin-left: auto;margin-right: auto;
+  
+  position: fixed;
+  z-index:1000;
+  top: 0;
+	
+  box-shadow:0px 2px 4px #fff;
+}
+#news-nav-list li{
+	display:inline-block;
+	padding:5px 10px 10px 10px;
+	color:#fff;
+}
+#news-nav-list li:hover,#news-nav-list li.current{
+	background:#00508B;
+	color:#ff0;
+	position:relative;
+}
+#news-nav-list li.current:before{
+	display:block;
+	width:0;
+	position:absolute;
+	left:50%;bottom:-8px;
+	margin-left:-6px;
+	border-width:6px;
+	
+	border-style:solid;
+	border-color: #fff #fff transparent transparent;
+	
+	background:#fff;color:#fff;
+	content:"";
+	
+	transform:rotate(45deg);-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);
+	
+}
+#news-nav-list  a{
+	font-size:20px;
+	color:inherit;
+	text-decoration:none;
+}
+
+
+#main{
+  padding-top:50px;
+  padding-bottom:100px;
+}
+/* focus page(home.jsp) */
+#main > div{
+	display:flex;
+	flex-flow:row wrap;
+}
+#main section{
+	flex:1;
+	min-width:300px;
+	height:300px;
+	margin:10px;
+	overflow:hidden;
+	position:relative;
+}
+#main a{
+	height:100%;
+	display:block;
+}
+#main .newspic{
+	width:100%;
+	min-height:300px;
+	transition:width 2s;
+}
+#main .newspic:hover{
+	width:120%;
+	
+}
+#main .title{
+	font-size:20px;
+	padding:5px 10px;
+	position:absolute;
+	width:100%;
+	bottom:0;
+	z-index:100;
+	color:#fff;
+	background:rgba(0,0,0,0.5);
+	
+}
+#main .title:hover{
+	color:#1980CC;
+}
+/*template_footer*/
+#footer{
+  text-align: center;
+  margin-top: 50px;
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+  background-color: #1980CC;
+  color:#fff;	
+  z-index:1000;
+}
+
+
+/* detail page(detail.jsp) */
+#page-detail{
+
+}
+#page-detail h1{
+	font-size:30px;
+}
+#page-detail .comment-side{
+	position:relative;
+	width:400px;
+	overflow:hidden;
+}
+
+#page-detail .comment-side img{
+	width:100%;
+}
+#page-detail .comment-side li{
+	margin:10px 0;
+}
+
+
+
+#page-detail .news-side{
+	margin-left:420px;
+}
+
+#page-detail .news-content{
+	margin:20px 0;
+}

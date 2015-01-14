@@ -1,0 +1,81 @@
+body {
+  font-family: "微软雅黑",Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  position: relative;
+  color: #555;
+  background: #fff;
+  /*background: url(/static/images/bg.jpg) no-repeat scroll center 0px #030B22;*/
+  /*background-attachment: fixed;*/
+}
+.clearfix:after{
+  clear: both;
+  content: "";
+  display: block;
+  height: 0px;
+  visibility: hidden;
+  line-height: 0;
+}
+.pull-right{float: right;}
+.pull-left{float:left;}
+.response-ctr{
+  /*text-align: center;*/
+  margin-left: auto;margin-right: auto;
+}
+@media screen and (min-width: 960px){
+  .response-ctr{
+    width: 900px;
+  }
+}
+@media screen and (min-width: 1000px){
+  .response-ctr{
+    width: 1000px;
+  }
+}
+/*  form*/
+.form-tips{
+	font-size:16px;
+	color:#0f0;
+}
+.form-tips-error{
+	color:#f00;
+}
+.simpleform{
+	margin:20px 0;padding:20px 0;
+	border-bottom:1px solid #21B384;
+}
+.simpleform .input-control{
+	margin:5px 0;
+}
+.simpleform .input-control label{
+	width:115px;
+	text-align:right;
+	display:inline-block;
+	margin-right:5px;
+}
+.simpleform input[type="button"],button{
+	background:#21B384;
+	padding:5px;
+	color:#fff;
+	cursor:pointer;
+	margin:1px;
+	border:none;
+}
+.simpleform input[type="button"]{	margin-left:120px;}
+.simpleform input[type="button"]:hover,button:hover{
+	background:#44e399;
+}
+.simpleform input[type="password"],.simpleform input[type="text"],.simpleform textarea,
+.simpleform select{
+	width:400px;
+}
+.simpleform textarea{
+	min-height:300px;
+}
+
+
+
+
+
+
+
+
