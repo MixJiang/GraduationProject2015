@@ -18,15 +18,15 @@ function setCookie(c_name,value){
 	document.cookie=c_name+ "=" +escape(value)+";";
 }
 function fixFooter () {
-	var wh = $(window).height(),
-		bh = $("body").height(),
-		fh = $("#footer").height();
+	// var wh = $(window).height(),
+	// 	bh = $("body").height(),
+	// 	fh = $("#footer").height();
 	
-	if(bh < wh){
-		$("html").css({"height":"100%"});
-		$("body").css({"position":"relative","height":"100%"});
-		$("#footer").css({"position":"fixed","bottom":"0","width":"100%"});
-	}
+	// if(bh < wh){
+	// 	$("html").css({"height":"100%"});
+	// 	$("body").css({"position":"relative","height":"100%"});
+	// 	$("#footer").css({"position":"fixed","bottom":"0","width":"100%"});
+	// }
 }
 
 function fixHeader (){

@@ -78,6 +78,7 @@
     </package>
     <!-- 后台管理 -->
     <package name="manage-package" namespace="/manage" extends="struts-default">
+    	
     	<action name="*">  
 		    <result>/managesite/{1}.jsp</result>  
 	    </action>
@@ -91,6 +92,7 @@
    
     <!-- 新版前端站点 -->
     <package name="news2-package" namespace="/news2" extends="struts-default">
+    	
     	<action name="*">  
 		    <result>/content/news/{1}.jsp</result>  
 	    </action>
@@ -100,5 +102,4 @@
 		    <result>/content/manage/{1}.jsp</result>  
 	    </action>
     </package>
-    
 </struts>    
