@@ -49,7 +49,7 @@
 		document.body.scrollTop = document.documentElement.scrollTop = 0;
 
 		// disable scrolling
-		if(document.cookie ==""){
+		if(document.cookie =="" && location.href.search("home") > 0){
 			window.addEventListener( 'scroll', noscroll );
 		}
 		$("button.trigger").click(toggleContent);

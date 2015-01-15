@@ -60,3 +60,6 @@ function getNewsByType($wrap,type){
 		}
 	});
 }
+function getLocalTime(ms) {     
+    return new Date(parseInt(ms)).toLocaleString();
+}

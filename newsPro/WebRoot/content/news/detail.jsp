@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,java.text.SimpleDateFormat" pageEncoding="UTF-8"%>
 <jsp:include page="template_header.jsp" />
 <div id="container" class="container container--open">
 	<div class="user__action">
@@ -15,9 +15,14 @@
 				<div class="intro__description">
 					<p class="title">ZNEWS最图闻——汇集最精彩的图片与新闻</p>
 					<div class="demos">
+						<%if(request.getAttribute("type").toString().equals("2")){ %>
+						<a class="demos__item" href="news2/tech">科技</a>
+						<%}else if(request.getAttribute("type").toString().equals("1")) {%>
+						<a class="demos__item" href="news2/entertain">娱乐</a>
+						<%}else if(request.getAttribute("type").toString().equals("3")){ %>
 						<a class="demos__item" href="news2/military">军事</a>
-						>
-						<a href="">中日即将展开钓鱼岛大战</a>
+						<%} %>
+						<a href="news2/detail?id=${news.id}">|${news.title}</a>
 					</div>
 				</div>
 				<% if(session.getAttribute("username") ==null ){ %>
@@ -49,12 +54,35 @@
 	</header><!-- /intro -->
 	<section class="detail-wrap">
 		<h1>${news.title}</h1>
-		<p><span>2015年8月8日 9点</span><span>编者：王尼玛</span><span>来源：最图闻</span></p>
-		<img src="img/bg-home.jpg">
-		<p>这是新闻内容</p>
+		<p>
+		  <span id="newsCreatetime"></span>
+		  <script>
+		  	$("#newsCreatetime").text(getLocalTime("${news.createtime}"));
+		  </script>
+		  
+		  <span>编者:${news.author}</span>
+		  <span class="collectionBtn pull-right">&hearts;收藏此文</span>  
+		</p>
+		<img src="${news.imgUrl}">
+		<p>${news.content}</p>
 	</section>
 	<section class="comment-wrap">
-		这是评论
+		<form >
+		<textarea rows="" cols="">
+		</textarea>
+		<button class="commentBtn">我要评论</button>
+		</form>
+		<ul class="comment-list">
+			<%for(int i=0;i<10;i++) {%>
+			<li class="clearfix">
+				<img src="img/userimg.jpg" class="userimg">
+				<div class="comment-box">
+					<p>武汉网友:<span class="pull-right">1月15日 18:30</span></p>
+					<p>是啊啊啦啦啦啦啦啦啦！</p>
+				</div>
+			</li>
+			<%}%>
+		</ul>
 	</section>
 <script type="text/javascript">
 // getNewsByType($(".items-wrap"),0);
