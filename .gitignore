@@ -7,3 +7,4 @@ WebRoot/WEB-INF/classes/
 *.jar
 *.jpg
 *.png
+*.sql
