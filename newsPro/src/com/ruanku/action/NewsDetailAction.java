@@ -16,9 +16,10 @@ public class NewsDetailAction  extends ActionSupport{
 	private int type;
 	private int state;
 	private int click; 
+	private News news;
 	public String execute() throws Exception{
 		NewsService ns =new NewsService();
-		News news = ns.findNewsById(id);
+		news = ns.findNewsById(id);
 		if(news == null){
 			return ERROR;
 		}
@@ -90,5 +91,13 @@ public class NewsDetailAction  extends ActionSupport{
 	}
 	public void setClick(int click) {
 		this.click = click;
+	}
+
+	public News getNews() {
+		return news;
+	}
+
+	public void setNews(News news) {
+		this.news = news;
 	}
 }

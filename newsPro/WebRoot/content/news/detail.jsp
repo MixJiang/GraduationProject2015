@@ -48,7 +48,7 @@
 		</div><!-- /intro__content -->
 	</header><!-- /intro -->
 	<section class="detail-wrap">
-		<h1>新闻标题：中日即将展开钓鱼岛大战</h1>
+		<h1>${news.title}</h1>
 		<p><span>2015年8月8日 9点</span><span>编者：王尼玛</span><span>来源：最图闻</span></p>
 		<img src="img/bg-home.jpg">
 		<p>这是新闻内容</p>
