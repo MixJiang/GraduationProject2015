@@ -92,7 +92,9 @@
    
     <!-- 新版前端站点 -->
     <package name="news2-package" namespace="/news2" extends="struts-default">
-    	
+    	<action name="detail" class="com.ruanku.action.NewsDetailAction">
+    		<result>/content/news/detail.jsp</result>
+    	</action>
     	<action name="*">  
 		    <result>/content/news/{1}.jsp</result>  
 	    </action>
