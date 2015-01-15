@@ -3,7 +3,7 @@ WebRoot/WEB-INF/classes/
 
 # file types
 *.psd
-.class
-.jar
-.jpg
-.png
+*.class
+*.jar
+*.jpg
+*.png
