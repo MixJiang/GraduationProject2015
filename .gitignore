@@ -1,0 +1,6 @@
+# directories
+WebRoot/WEB-INF/classes/
+
+# file types
+*.psd
+.class
