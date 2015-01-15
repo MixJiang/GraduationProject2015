@@ -1,11 +1,9 @@
 package com.ruanku.action;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import com.ruanku.service.UserService;
+import com.ruanku.model.News;
+import com.ruanku.service.NewsService;
+
 
 @SuppressWarnings("serial")
 public class NewsDetailAction  extends ActionSupport{
@@ -19,7 +17,25 @@ public class NewsDetailAction  extends ActionSupport{
 	private int state;
 	private int click; 
 	public String execute() throws Exception{
-		return "json";
+		NewsService ns =new NewsService();
+		News news = ns.findNewsById(id);
+		if(news == null){
+			return ERROR;
+		}
+		this.setAllProperties(news);
+		return SUCCESS;
+	}
+	
+	private void setAllProperties(News news){
+		id=news.getId();
+		title=news.getTitle();
+		content=news.getContent();
+		createtime=news.getCreatetime();
+		author=news.getAuthor();
+		imgUrl=news.getImgUrl();
+		type=news.getType();
+		state=news.getState();
+		click=news.getClick();
 	}
 	public int getId() {
 		return id;
@@ -38,5 +54,41 @@ public class NewsDetailAction  extends ActionSupport{
 	}
 	public void setContent(String content) {
 		this.content = content;
+	}
+	public String getCreatetime() {
+		return createtime;
+	}
+	public void setCreatetime(String createtime) {
+		this.createtime = createtime;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+	public int getType() {
+		return type;
+	}
+	public void setType(int type) {
+		this.type = type;
+	}
+	public int getState() {
+		return state;
+	}
+	public void setState(int state) {
+		this.state = state;
+	}
+	public int getClick() {
+		return click;
+	}
+	public void setClick(int click) {
+		this.click = click;
 	}
 }
