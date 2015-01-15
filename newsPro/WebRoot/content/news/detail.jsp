@@ -13,12 +13,11 @@
 			<h1 class="intro__title">ZNEWS最图闻</h1>
 			<div class="intro__subtitle">
 				<div class="intro__description">
-					图片新闻发布网站
+					<p class="title">ZNEWS最图闻——汇集最精彩的图片与新闻</p>
 					<div class="demos">
-						<a class="demos__item" href="news2/home">首页</a>
-						<a class="demos__item" href="news2/tech">科技</a>
-						<a class="demos__item demos__item--current" href="news2/entertain">娱乐</a>
 						<a class="demos__item" href="news2/military">军事</a>
+						>
+						<a href="">中日即将展开钓鱼岛大战</a>
 					</div>
 				</div>
 				<% if(session.getAttribute("username") ==null ){ %>
@@ -48,13 +47,17 @@
 			</div>
 		</div><!-- /intro__content -->
 	</header><!-- /intro -->
-	<section class="items-wrap">
-		<!-- <a href="#" class="item">
-			<img class="item__image" src="img/item01.jpg" alt="item01"/>
-			<h2 class="item__title">Magnificence</h2>
-		</a> -->
+	<section class="detail-wrap">
+		<h1>新闻标题：中日即将展开钓鱼岛大战</h1>
+		<p><span>2015年8月8日 9点</span><span>编者：王尼玛</span><span>来源：最图闻</span></p>
+		<img src="img/bg-home.jpg">
+		<p>这是新闻内容</p>
+	</section>
+	<section class="comment-wrap">
+		这是评论
 	</section>
 <script type="text/javascript">
-	getNewsByType($(".items-wrap"),1);
+// getNewsByType($(".items-wrap"),0);
+// getNewsById(wrap,id);
 </script>
 <jsp:include page="template_footer.jsp" />

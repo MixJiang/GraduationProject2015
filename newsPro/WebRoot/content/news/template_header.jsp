@@ -19,6 +19,7 @@
 		<![endif]-->
 		<!--<script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>-->
    		<script>window.jQuery || document.write('<script src="js/jquery-1.9.1.min.js" type="text/javascript"><\/script>');</script>
+   		<script type="text/javascript" src="js/base.js"></script>
 	</head>
 	<body>
 	<div class="hiddenBox">

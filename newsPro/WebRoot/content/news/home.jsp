@@ -19,7 +19,7 @@
 				<div class="intro__description">
 					<p class="title">ZNEWS最图闻——汇集最精彩的图片与新闻</p>
 					<div class="demos">
-						<a class="demos__item demos__item--current" href="news2/home">焦点</a>
+						<a class="demos__item demos__item--current" href="news2/home">首页</a>
 						<a class="demos__item" href="news2/tech">科技</a>
 						<a class="demos__item" href="news2/entertain">娱乐</a>
 						<a class="demos__item" href="news2/military">军事</a>
@@ -59,21 +59,7 @@
 		</a> -->
 	</section>
 <script type="text/javascript">
-$.ajax({
-	url:'api/get_news_by_type?type=0',
-	dataType:'json',
-	type:'get',
-	success:function(data){
-		var list = data.news;
-		var domstr,i;
-		for(i=0;i<list.length;i++){
-			domstr='<a href="news/detail?id='+list[i].id+'" class="item">'+
-				'<img class="item__image" alt="" src="'+list[i].imgUrl+'">'+
-				'<h2 class="item__title">'+list[i].title+'</h2></a>';
-			$(".items-wrap").append(domstr);
-		}
-	}
-});
+getNewsByType($(".items-wrap"),0);
 
 </script>
 <jsp:include page="template_footer.jsp" />

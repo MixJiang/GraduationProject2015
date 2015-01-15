@@ -1,16 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <jsp:include page="template_header.jsp" />
-<% if(session.getAttribute("username") ==null ){ %>
-<div id="container" class="container">
-<%}else{%>
 <div id="container" class="container container--open">
-<%}%>
-	<div class="user__action">
-	<% if(session.getAttribute("username") ==null ){ %>
-		<button id="loginLink">登录</button>
-		<button id="registerLink">注册</button>
-	<%}%>
-	</div>
 	<header class="intro">
 		<img class="intro__image" src="img/header03.jpg" alt="Iceland galcier"/>
 		<div class="intro__content">
@@ -25,30 +15,11 @@
 						<a class="demos__item" href="manage2/self">个人信息</a>
 					</div>
 				</div>
-				<% if(session.getAttribute("username") ==null ){ %>
-				<button class="trigger">
-					<svg width="100%" height="100%" viewBox="0 0 60 60" preserveAspectRatio="none">
-						<g class="icon icon--grid">
-							<rect x="32.5" y="5.5" width="22" height="22"/>
-							<rect x="4.5" y="5.5" width="22" height="22"/>
-							<rect x="32.5" y="33.5" width="22" height="22"/>
-							<rect x="4.5" y="33.5" width="22" height="22"/>
-						</g>
-						<g class="icon icon--cross">
-							<line x1="4.5" y1="55.5" x2="54.953" y2="5.046"/>
-							<line x1="54.953" y1="55.5" x2="4.5" y2="5.047"/>
-						</g>
-					</svg>
-					<span>View content</span>
-				</button>
-				<%}else{%>
 				<div class="user__menu">
 					<p><%=session.getAttribute("username")%></p>
 					<a href="news2/home">回到首页</a><a id="logoutBtn" href="javascript:void(0);">退出</a>
 				</div>
 				<a href="manage2/self"><img src="img/userimg.jpg" class="headimg50"></a>
-					
-				<%}%>
 			</div>
 		</div><!-- /intro__content -->
 	</header><!-- /intro -->
@@ -74,7 +45,7 @@
 					<td>2015/01/12 09:30</td>
 					<td>大熊猫</td>
 					<td>
-						<button>修改</button><button>删除</button>
+						<button>详细</button><button>审核</button>
 					</td>
 				</tr>
 				<%} %>
@@ -82,15 +53,14 @@
 			</div>
 			<div id="newscreate-ctr">
 				<form id="createNewsBox" class="simpleform">
-				  <h1>新建新闻</h1>
 				  <div class="input-control">
-				    <label>标题</label>
+				    <label>新闻标题</label>
 				  	<input type="text"  name="title"/>
 				  	<p class="form-tips"> </p>
 				  </div>
 				  <div  class="input-control">
 				    <label>封面图片</label>
-				  	<img alt="" src="#" id="newsimg" style="width:400px;min-height:100px;border:1px">
+				  	<img alt="建议使用大图" src="#" id="newsimg">
 				  	<p id="qiniu_upload_container">
 				  		<input type="button" value="上传封面" id="qiniu_upload_pickfiles">
 				  	</p>
@@ -123,6 +93,8 @@
 <script type="text/javascript" src="js/qiniu/qiniu.js"></script>
 <script type="text/javascript" src="js/upload.js"></script>
 <script type="text/javascript" >
+	//manage news
+	
     //init qiniu uploader
     var uploader = QiniuUploaderFactoray({
 	        'UploadProgress': function(up, file) {

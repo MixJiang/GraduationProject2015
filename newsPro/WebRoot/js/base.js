@@ -42,3 +42,21 @@ function fixHeader (){
 	// $("#nav-"+navname).addClass("selected");
 
 }
+function getNewsByType($wrap,type){
+	$.ajax({
+		url:'api/get_news_by_type?type='+type,
+		dataType:'json',
+		type:'get',
+		success:function(data){
+			var list = data.news;
+			var domstr,i;
+			for(i=0;i<list.length;i++){
+				domstr='<a href="news2/detail?id='+list[i].id+'" class="item">'+
+					'<img class="item__image" alt="" src="'+list[i].imgUrl+'">'+
+					'<h2 class="item__title">'+list[i].title+'</h2></a>';
+				//$(".items-wrap").append(domstr);
+				$wrap.append(domstr);
+			}
+		}
+	});
+}

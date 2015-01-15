@@ -170,11 +170,16 @@ a:focus {
 /*manage-wrap*/
 .manage-wrap{
 	position: relative;
-	padding: 150px 10px 100px 10px;
+	padding: 150px 0 100px 0;
+	
 	/* background:#36b6dd; */
 	background:#fff;
 	color:#2a2e39;
+	
+}
+.manage-wrap .switch-tab,.manage-wrap .switch-content{
 	margin-left:auto;margin-right:auto;
+	width:700px;
 }
 .manage-wrap .switch-tab{
 	margin-bottom:1em;

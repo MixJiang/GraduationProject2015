@@ -235,3 +235,25 @@
 		font-size: 2em;
 	}
 }
+
+/*manage-wrap*/
+.detail-wrap,.comment-wrap{
+	position: relative;
+	padding:100px 10px 10px 10px;
+	width:700px;
+	margin-left: auto;margin-right: auto;
+	/* background:#36b6dd; */
+	background:#fff;
+	color:#2a2e39;
+	
+}
+.detail-wrap img{
+	width: 100%;
+}
+.comment-wrap {
+	border-top: 1px solid #36b6dd;
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+
+
