@@ -13,7 +13,7 @@
 			<h1 class="intro__title">ZNEWS最图闻</h1>
 			<div class="intro__subtitle">
 				<div class="intro__description">
-					图片新闻发布网站
+					<p class="title">ZNEWS最图闻——汇集最精彩的图片与新闻</p>
 					<div class="demos">
 						<a class="demos__item" href="news2/home">首页</a>
 						<a class="demos__item" href="news2/tech">科技</a>
@@ -42,7 +42,7 @@
 					<p><%=session.getAttribute("username")%></p>
 					<a href="manage2/news">管理平台</a><a id="logoutBtn" href="javascript:void(0);">退出</a>
 				</div>
-				<a href="manage2/self"><img src="img/userimg.jpg" class="headimg50"></a>
+				<a href="manage2/self"><img src="${session.headimg}" class="headimg50"></a>
 					
 				<%}%>
 			</div>

@@ -19,7 +19,7 @@
 					<p><%=session.getAttribute("username")%></p>
 					<a href="news2/home">回到首页</a><a id="logoutBtn" href="javascript:void(0);">退出</a>
 				</div>
-				<a href="manage2/self"><img src="img/userimg.jpg" class="headimg50"></a>
+				<a href="manage2/self"><img src="${session.headimg}" class="headimg50"></a>
 			</div>
 		</div><!-- /intro__content -->
 	</header><!-- /intro -->
@@ -128,6 +128,7 @@
 				if(data.code == 0){
 					//success
 					alert("修改成功");
+					$(".headimg50")[0].src=postdata.headimg;
 				}
 				else{
 					console.log("data error");

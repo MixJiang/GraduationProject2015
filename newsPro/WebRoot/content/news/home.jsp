@@ -46,7 +46,7 @@
 					<p><%=session.getAttribute("username")%></p>
 					<a href="manage2/news">管理平台</a><a id="logoutBtn" href="javascript:void(0);">退出</a>
 				</div>
-				<a href="manage2/self"><img src="img/userimg.jpg" class="headimg50"></a>
+				<a href="manage2/self"><img src="${session.headimg}" class="headimg50"></a>
 					
 				<%}%>
 			</div>

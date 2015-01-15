@@ -50,7 +50,7 @@ function getNewsByType($wrap,type){
 		success:function(data){
 			var list = data.news;
 			var domstr,i;
-			for(i=0;i<list.length;i++){
+			for(i=list.length-1;i>=0;i--){
 				domstr='<a href="news2/detail?id='+list[i].id+'" class="item">'+
 					'<img class="item__image" alt="" src="'+list[i].imgUrl+'">'+
 					'<h2 class="item__title">'+list[i].title+'</h2></a>';

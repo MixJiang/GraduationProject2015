@@ -47,6 +47,16 @@
 	    		<param name="root">jsonData</param>
 	    	</result>
 	    </action>
+	    <action name="add_comment" class="com.ruanku.action.ApiCommentAction" method="addComment">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <action name="find_comment_by_newsid" class="com.ruanku.action.ApiCommentAction" method="findCommentByNewsid">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
 	    <!-- 普通用户信息修改api -->
 	    <action name="modify_userinfo" class="com.ruanku.action.ApiUserAction" method="modifyUserinfo">
 	    	<result type="json" name="success">
