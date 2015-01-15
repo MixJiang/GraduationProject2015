@@ -4,3 +4,4 @@ WebRoot/WEB-INF/classes/
 # file types
 *.psd
 .class
+.jar
