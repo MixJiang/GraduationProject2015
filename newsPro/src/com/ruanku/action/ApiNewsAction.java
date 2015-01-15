@@ -9,6 +9,7 @@ import java.util.Map;
 import com.opensymphony.xwork2.ActionSupport;
 import com.ruanku.model.News;
 import com.ruanku.service.NewsService;
+import com.ruanku.service.UserService;
 
 @SuppressWarnings("serial")
 public class ApiNewsAction  extends ActionSupport{
@@ -50,6 +51,43 @@ public class ApiNewsAction  extends ActionSupport{
 		
 		return SUCCESS;
 	}
+	
+	public String modifyNews(){
+		News news = new News();
+		news.getTitle();
+		news.getType();
+		news.getCreatetime();
+		news.getAuthor();
+		
+		System.out.println(news);
+		NewsService newsService = new NewsService();
+		newsService.modifyNews(news);
+		
+		jsonData = new HashMap<String,Object>();
+		if(NewsService.modifyNews(news) == true){
+			jsonData.put("code", "0");
+		}
+		else{
+			jsonData.put("code", "1");
+		}
+		return SUCCESS;
+	} 
+	
+	public String deleteNews(){
+		News news = new News();
+		NewsService newsService = new NewsService();
+		newsService.deleteNews(news);
+		
+		jsonData = new HashMap<String,Object>();
+		if(NewsService.deleteNews(news) == true){
+			jsonData.put("code", "0");
+		}
+		else{
+			jsonData.put("code", "1");
+		}
+		return SUCCESS;
+	}
+	
 	
 	public String findNewsByType(){
 		NewsService newsService = new NewsService();

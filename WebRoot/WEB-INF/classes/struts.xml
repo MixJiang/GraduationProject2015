@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	
+	<!-- json 请求 -->
+    <package name="json-package" namespace="/api" extends="json-default">
+    	<!-- 普通用户登录 -->
+	    <action name="login" class="com.ruanku.action.LoginAction" method="AJAXlogin">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- 管理员登录 -->
+	    <action name="login_admin" class="com.ruanku.action.LoginAction" method="AJAXloginAdmin">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- 统一退出接口 -->
+		<action name="logout" class="com.ruanku.action.LoginAction" method="AJAXlogout">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- 注册接口 -->
+	    <action name="register" class="com.ruanku.action.RegisterAction" method="AJAXregister">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- 普通用户信息查询api -->
+	    <action name="get_userinfo" class="com.ruanku.action.ApiUserAction" method="getUserinfo">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <action name="get_all_userinfo" class="com.ruanku.action.ApiUserAction" method="getAllUserinfo">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <action name="find_username" class="com.ruanku.action.ApiUserAction" method="findUsername">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- 普通用户信息修改api -->
+	    <action name="modify_userinfo" class="com.ruanku.action.ApiUserAction" method="modifyUserinfo">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <action name="modify_password" class="com.ruanku.action.ApiUserAction" method="modifyPassword">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- 七牛云接口 -->
+	    <action name="qiniu_get_uptoken" class="com.ruanku.qiniu.QiniuUpload" method="upToken">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- 新闻api -->
+	    <action name="createnews" class="com.ruanku.action.ApiNewsAction" method="createNews">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <action name="get_news_by_type" class="com.ruanku.action.ApiNewsAction" method="findNewsByType">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+    </package>
+    <!-- 后台管理 -->
+    <package name="manage-package" namespace="/manage" extends="struts-default">
+    	<action name="*">  
+		    <result>/managesite/{1}.jsp</result>  
+	    </action>
+    </package>
+    <!-- 门户网站 --> 
+    <package name="site-package" namespace="/news" extends="struts-default">
+    	<action name="*">  
+		    <result>/newssite/{1}.jsp</result>  
+	    </action>
+    </package>
+    
+</struts>    

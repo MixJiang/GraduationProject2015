@@ -1,0 +1,113 @@
+/* login.jsp */
+.wrapper{
+	background:url(/newsPro/img/bg01.jpg);
+	background-size:cover;
+	color:#fff;
+}
+
+#header,#footer{text-align:center;}
+
+#header h1{
+	text-align:center;
+	font-size:50px;
+	padding:10px 0 50px 0;
+}
+#footer{
+	padding:20px;
+	background:rgba(0,0,0,0.5);
+}
+#footer li{display:inline-block;}
+
+
+
+
+#loginForm{
+	width:400px;
+	padding:10px;
+	/* background:rgba(0,0,0,0.1); */
+	margin-left:auto;margin-right:auto;
+}
+#loginForm .input-control{
+	height:70px;
+}
+#loginForm input{
+	width:100%;
+	font-size:20px;
+	height:30px;
+	border:none;
+	background:transparent;
+	border-bottom:3px solid #fff;
+	outline:none;
+	color:#fff;
+}
+input::-webkit-input-placeholder,input:-moz-placeholder{
+  color: #636363;
+}
+#loginForm input[type="button"]{
+	background:transparent;
+	border:3px solid #fff;
+	padding:10px;
+	width:180px;
+	height:50px;
+	font-size:20px;
+	cursor:pointer;
+}
+#loginForm input[type="button"]:hover{
+	background:#fff;
+	color:#aaa;
+	border-color:#aaa;
+}
+
+/* manage*/
+.header{
+	background:rgba(0,0,0,0.5);
+	color:#fff;
+	padding:10px;
+}
+#manage .content{
+	margin-top:40px;
+}
+#manage-nav-list{
+	width:180px;
+	font-size:20px;
+}
+#manage-nav-list li{
+	margin:5px 0;
+	padding:5px;
+	background:#aaa;
+	cursor:poionter;
+}
+#manage-nav-list li.current{
+	background:#21B384;
+}
+#manage-nav-list a{
+	text-decoration:none;
+	color:#fff;
+}
+#manage-nav-list a:hover{
+	color:#21B384;
+}
+
+#manage .main{
+	margin-left:200px;
+	margin-bottom:100px;
+}
+#manage table{width:100%;}
+#manage th,#manage td{
+	border:1px solid #555;
+	padding:5px;
+}
+#manage th{
+	text-align:center;
+	background:#35C4EF;
+}
+/*news.jsp*/
+#createNewsBox{display:none;}
+
+
+/* self.jsp*/
+#headimg100,#headimg50{
+	border:2px solid #eee;
+}
+#headimg100{width:100px;height:100px;}
+#headimg50{width:50px;height:50px;}

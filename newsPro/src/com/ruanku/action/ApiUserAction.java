@@ -111,8 +111,10 @@ public class ApiUserAction  extends ActionSupport{
 	
     public String getHeadimg(){ return headimg; }
 	
-	public void setHeadimg(String img){ headimg = img; }
+	public void setHeadimg(String headimg){ this.headimg = headimg; }
 	
-	public void setNewpassword(String img){ headimg = img; }
+	public String getNewpassword(){ return newpassword; }
+	
+	public void setNewpassword(String newpassword){ this.newpassword = newpassword; }
 
 }

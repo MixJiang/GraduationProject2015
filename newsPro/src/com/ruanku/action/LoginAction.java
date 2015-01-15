@@ -13,6 +13,7 @@ public class LoginAction extends ActionSupport{
 	
 	private String username;
 	private String password;
+	private String headimg;
 	private Map<String,Object> jsonData;
 	
 	public String getUsername(){ return username; }
@@ -30,6 +31,7 @@ public class LoginAction extends ActionSupport{
 		return "json";
 	}
 	
+	
 	public String AJAXlogin(){
 		jsonData = new HashMap<String,Object>();
 		UserService userService = new UserService();
@@ -38,6 +40,7 @@ public class LoginAction extends ActionSupport{
 			jsonData.put("type", "10");
 			jsonData.put("username", username);
 			ActionContext.getContext().getSession().put("username", username);
+			ActionContext.getContext().getSession().put("headimg",headimg);
 		}
 		else{
 			jsonData.put("code","-1");
@@ -70,6 +73,7 @@ public class LoginAction extends ActionSupport{
 		if(name.equals(username)){
 			jsonData.put("code", "0");
 			ActionContext.getContext().getSession().remove("username");
+			ActionContext.getContext().getSession().remove("headimg");
 		}
 		else{
 			jsonData.put("code","-1");

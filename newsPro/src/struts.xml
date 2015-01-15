@@ -5,6 +5,33 @@
 	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<constant name="struts.serve.static.browserCache" value="false" />
 	
+	<package name="authority" extends="struts-default">
+    	<interceptors>
+    		<interceptor name="authority" class="com.ruanku.interceptot.LoginInterceptor">
+			</interceptor>
+    		<interceptor-stack name="mydefault">
+    			<interceptor-ref name="defaultStack" />
+    			<interceptor-ref name="authority" />
+    		</interceptor-stack>
+    	</interceptors>
+    	<global-results>
+    	<!-- return to /managesite/login.jsp -->
+			<result name="login">/managesite/login.jsp</result>
+		</global-results>
+		<action name="add_collection" class="com.ruanku.action.ApiCollectionAction" method="addCollection">  
+			<interceptor-ref name="mydefault" />
+		</action>  	
+		<action name="createnews" class="com.ruanku.action.ApiNewsAction" method="createNews">
+		 	<interceptor-ref name="mydefault" />
+		</action>
+		<action name="modify_news" class="com.ruanku.action.ApiNewsAction" method="modifyNews">
+			<interceptor-ref name="mydefault" />
+		</action>
+		<action name="delete_news" class="com.ruanku.action.ApiNewsAction" method="deleteNews">
+			<interceptor-ref name="mydefault" />
+		</action>
+	</package>
+	
 	<!-- json 请求 -->
     <package name="json-package" namespace="/api" extends="json-default">
     	<!-- 普通用户登录 -->
@@ -75,30 +102,52 @@
 	    		<param name="root">jsonData</param>
 	    	</result>
 	    </action>
+	    <!-- modify news -->
+	    <action name="modify_news" class="com.ruanku.action.ApiNewsAction" method="modifyNews">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- delete news -->
+	    <action name="delete_news" class="com.ruanku.action.ApiNewsAction" method="deleteNews">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- add comment -->
+	    <action name="add_comment" class="com.ruanku.action.ApiCommentAction" method="addComment">
+	    	<result type="json" name="success">
+	    		<param name="root">jsonData</param>
+	    	</result>
+	    </action>
+	    <!-- add collection -->
+		<action name="add_collection" class="com.ruanku.action.ApiCollectionAction" method="addCollection">
+			<result type="json" name="success">
+				<param name="root">jsonData</param>
+			</result>
+		</action>
+    
     </package>
     <!-- 后台管理 -->
     <package name="manage-package" namespace="/manage" extends="struts-default">
+    	<action name="" class="com.ruanku.action.CollectionAction">
+    		<result>/manage/</result>
+    	</action>
+    	<action name="" class="com.ruanku.action.CommentAction">
+    		<result>/manage/</result>
+    	</action>
     	<action name="*">  
 		    <result>/managesite/{1}.jsp</result>  
 	    </action>
     </package>
     <!-- 门户网站 --> 
     <package name="site-package" namespace="/news" extends="struts-default">
-    	<action name="*">  
-		    <result>/newssite/{1}.jsp</result>  
-	    </action>
+    	<action name="" class="com.ruanku.action.NewsAction">
+    		<result>/news</result>
+    	</action>
+    	<action name="*">
+    		<result>/newssite/{1}.jsp</result>
+    	</action>
     </package>
-   
-    <!-- 新版前端站点 -->
-    <package name="news2-package" namespace="/news2" extends="struts-default">
-    	<action name="*">  
-		    <result>/content/news/{1}.jsp</result>  
-	    </action>
-    </package>
-    <package name="manage2-package" namespace="/manage2" extends="struts-default">
-    	<action name="*">  
-		    <result>/content/manage/{1}.jsp</result>  
-	    </action>
-    </package>
-    
+
 </struts>    

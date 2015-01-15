@@ -88,17 +88,5 @@
 		    <result>/newssite/{1}.jsp</result>  
 	    </action>
     </package>
-   
-    <!-- 新版前端站点 -->
-    <package name="news2-package" namespace="/news2" extends="struts-default">
-    	<action name="*">  
-		    <result>/content/news/{1}.jsp</result>  
-	    </action>
-    </package>
-    <package name="manage2-package" namespace="/manage2" extends="struts-default">
-    	<action name="*">  
-		    <result>/content/manage/{1}.jsp</result>  
-	    </action>
-    </package>
     
 </struts>    
