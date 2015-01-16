@@ -59,6 +59,17 @@ public class NewsService {
 		
 		return (List<News>) q.list();
 	}
+	public News findNewsById(int id){
+		session = sf.openSession();
+		session.beginTransaction();
+		Query q = session.createQuery("select n from News n where n.id=:id");
+		q.setParameter("id", id);
+		System.out.println(q.list().toString());
+		if(q.list().size() == 0){
+			return null;
+		}
+		return (News)q.list().iterator().next();
+	}
     
 
 }

@@ -28,8 +28,14 @@ public class Comment implements Serializable{
 	@Column(name="userid") 
 	private int userid;
 	
+	@Column(name="username") 
+	private String username;
+	
 	@Column(name="newsid") 
 	private int newsid;
+	
+	@Column(name="newstitle") 
+	private String newstitle;
 	
 	@Column(name="content") 
 	private String content;
@@ -38,7 +44,7 @@ public class Comment implements Serializable{
 	private String createtime;
 	
 	@Column(name="state") 
-	private String state;
+	private int state;
 	
 
 	public int getId() {
@@ -81,12 +87,28 @@ public class Comment implements Serializable{
 		this.createtime = createtime;
 	}
 
-	public String getState() {
+	public int getState() {
 		return state;
 	}
 
-	public void setState(String state) {
+	public void setState(int state) {
 		this.state = state;
+	}
+
+	public String getNewstitle() {
+		return newstitle;
+	}
+
+	public void setNewstitle(String newstitle) {
+		this.newstitle = newstitle;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	

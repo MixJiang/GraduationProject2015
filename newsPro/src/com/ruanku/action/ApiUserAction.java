@@ -65,6 +65,9 @@ public class ApiUserAction  extends ActionSupport{
 	}
 	public String modifyPassword(){
 		jsonData = new HashMap<String,Object>();
+		
+		System.out.println("password:"+password);
+		System.out.println("newpassword:"+newpassword);
 		UserService userService = new UserService();
 		if(userService.login(username, password)){
 			userService.modifyPassword(username,newpassword);
@@ -113,8 +116,11 @@ public class ApiUserAction  extends ActionSupport{
 	
 	public void setHeadimg(String headimg){ this.headimg = headimg; }
 	
+<<<<<<< HEAD
 	public String getNewpassword(){ return newpassword; }
 	
+=======
+>>>>>>> bd823c8b55cc26a9e02c8edcbbb993e62c45f6c1
 	public void setNewpassword(String newpassword){ this.newpassword = newpassword; }
 
 }

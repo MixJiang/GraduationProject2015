@@ -1,0 +1,11 @@
+# directories
+.git
+WebRoot/WEB-INF/classes/
+
+# file types
+*.psd
+*.class
+*.jar
+*.jpg
+*.png
+*.sql

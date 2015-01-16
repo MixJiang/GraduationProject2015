@@ -15,35 +15,35 @@ public class UserService {
 										.buildSessionFactory();
 	private Session session;
 	
-	public boolean login(String username,String password){
+	public User login(String username,String password){
 		session = sf.openSession();
 		session.beginTransaction();
-		String qstr = "select u from User u where u.username = :name and u.password = :pass and u.type=10";
+		String qstr = "select u from User u where u.username = :name and u.password = :pass";
 		Query q = session.createQuery(qstr);
 		q.setParameter("name", username);
 		q.setParameter("pass", password);
 		if(q.list().size() == 1){
-			return true;
+			return (User)q.list().iterator().next();
 		}
 		session.close();
-		return false;
+		return null;
 	}
 	
-	public boolean loginAdmin(String username,String password){
-		session = sf.openSession();
-		session.beginTransaction();
-
-		Query q = session.createQuery("select u from User u where u.username = :name and u.password = :pass and u.type=0");
-
-		q.setParameter("name", username);
-		q.setParameter("pass", password);
-		if(q.list().size() == 1){
-			return true;
-		}
-		session.close();
-		return false;
-
-	}
+//	public boolean loginAdmin(String username,String password){
+//		session = sf.openSession();
+//		session.beginTransaction();
+//
+//		Query q = session.createQuery("select u from User u where u.username = :name and u.password = :pass and u.type=0");
+//
+//		q.setParameter("name", username);
+//		q.setParameter("pass", password);
+//		if(q.list().size() == 1){
+//			return true;
+//		}
+//		session.close();
+//		return false;
+//
+//	}
 	
 	public boolean register(String username,String password){
 		

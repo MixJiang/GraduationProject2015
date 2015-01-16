@@ -18,15 +18,15 @@ function setCookie(c_name,value){
 	document.cookie=c_name+ "=" +escape(value)+";";
 }
 function fixFooter () {
-	var wh = $(window).height(),
-		bh = $("body").height(),
-		fh = $("#footer").height();
+	// var wh = $(window).height(),
+	// 	bh = $("body").height(),
+	// 	fh = $("#footer").height();
 	
-	if(bh < wh){
-		$("html").css({"height":"100%"});
-		$("body").css({"position":"relative","height":"100%"});
-		$("#footer").css({"position":"fixed","bottom":"0","width":"100%"});
-	}
+	// if(bh < wh){
+	// 	$("html").css({"height":"100%"});
+	// 	$("body").css({"position":"relative","height":"100%"});
+	// 	$("#footer").css({"position":"fixed","bottom":"0","width":"100%"});
+	// }
 }
 
 function fixHeader (){
@@ -41,4 +41,25 @@ function fixHeader (){
 	// var navname = location.pathname.split("/")[1];
 	// $("#nav-"+navname).addClass("selected");
 
+}
+function getNewsByType($wrap,type){
+	$.ajax({
+		url:'api/get_news_by_type?type='+type,
+		dataType:'json',
+		type:'get',
+		success:function(data){
+			var list = data.news;
+			var domstr,i;
+			for(i=list.length-1;i>=0;i--){
+				domstr='<a href="news2/detail?id='+list[i].id+'" class="item">'+
+					'<img class="item__image" alt="" src="'+list[i].imgUrl+'">'+
+					'<h2 class="item__title">'+list[i].title+'</h2></a>';
+				//$(".items-wrap").append(domstr);
+				$wrap.append(domstr);
+			}
+		}
+	});
+}
+function getLocalTime(ms) {     
+    return new Date(parseInt(ms)).toLocaleString();
 }
